@@ -2,7 +2,7 @@ const presentClosedUrl = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1083533/g
 const presentOpenedUrl = 'https://media.giphy.com/media/27ppQUOxe7KlG/giphy.gif'
 
 //get the image element on the screen
-const image = document.createElement('img');
+const image = document.createE;lement('img');
 image.src = presentClosedUrl;
 
 //append this to the dom
@@ -11,6 +11,8 @@ image.src = presentClosedUrl;
 const title = document.querySelector('h1');
 
 document.body.appendChild(image);
+
+document.body.innerHTML =  createImage('https://cdn.britannica.com/78/43678-131-84DFF99B/Starry-Night-canvas-Vincent-van-Gogh-New-1889.jpg')
 
 // add event listener to listen to mouse enter events
 image.addEventListener('click',  (event) => {
@@ -25,9 +27,12 @@ image.addEventListener('click',  (event) => {
 
 } )
 
+
+
 // add event listener to listen to mouse leave events
-image.addEventListener('mouseleave',  () => {
+image.addEventListener('mouseleave',  (event) => {
  
+  console.log(event)
   console.log("I am clicked, clickced !!")
   image.src = presentClosedUrl
   
@@ -35,6 +40,12 @@ image.addEventListener('mouseleave',  () => {
   title.classList.add("inactive")
 } )
 
+document.addEventListener("keydown", (event) => {
+  console.log("Event", event)
+})
+document.addEventListener("click", (event) => {
+  console.log("Document Event", event)
+})
 
 let opened = false;
 setInterval(() => {
@@ -49,3 +60,8 @@ setInterval(() => {
   console.log("opening", opened);
 
 }, 5000)
+
+
+function createImage(url){
+  return `<img src="${url}">`
+}
