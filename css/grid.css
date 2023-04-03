@@ -30,3 +30,8 @@
 .card-item:active{
   background-color:black;
 }
+
+
+.clicked{
+  background-color: red; 
+}
