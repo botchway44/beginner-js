@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    --box-width : 150px;
+    --box-height : 150px;
+    --box-gap : 10px;
+}
+
+section{
+    width: calc( var(--box-width) * 3 + calc(3 * var(--box-gap)) );
+    display: flex;
+    flex-wrap: wrap;
+}
+section div{
+    width: var(--box-width);
+    height: var(--box-height);
+    background-color: orange;
+    border-right: var(--box-gap) solid black;
+    border-top: var(--box-gap) solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
